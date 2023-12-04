@@ -145,7 +145,7 @@ final class Elementor {
         $message = sprintf(
         /* translators: 1: Plugin name 2: Elementor */
             esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', $this->textdomain ),
-            '<strong>' . esc_html__( 'Elementor Hello World', $this->textdomain ) . '</strong>',
+            '<strong>' . esc_html__( 'Zero Theme', $this->textdomain ) . '</strong>',
             '<strong>' . esc_html__( 'Elementor', $this->textdomain ) . '</strong>'
         );
 
@@ -168,7 +168,7 @@ final class Elementor {
         $message = sprintf(
         /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
             esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', $this->textdomain ),
-            '<strong>' . esc_html__( 'Elementor Hello World', $this->textdomain ) . '</strong>',
+            '<strong>' . esc_html__( 'Zero Theme', $this->textdomain ) . '</strong>',
             '<strong>' . esc_html__( 'Elementor', $this->textdomain ) . '</strong>',
             self::MINIMUM_ELEMENTOR_VERSION
         );
@@ -192,7 +192,7 @@ final class Elementor {
         $message = sprintf(
         /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
             esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', $this->textdomain ),
-            '<strong>' . esc_html__( 'Elementor Hello World', $this->textdomain ) . '</strong>',
+            '<strong>' . esc_html__( 'Zero Theme', $this->textdomain ) . '</strong>',
             '<strong>' . esc_html__( 'PHP', $this->textdomain ) . '</strong>',
             self::MINIMUM_PHP_VERSION
         );
