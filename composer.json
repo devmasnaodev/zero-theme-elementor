@@ -1,0 +1,23 @@
+{
+    "name": "infografic/zero-theme",
+    "description": "A simple and lightweight theme for Elementor page builder based on Tailwindcss or SASS",
+    "type": "project",
+    "require-dev": {
+        "giacocorsiglia/wordpress-stubs": "^5.1"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Rodrigo Gomes",
+            "email": "rodrigo@infografic.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ZT\\Core\\" : "core/",
+            "ZT\\Includes\\" : "includes/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
