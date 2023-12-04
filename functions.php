@@ -15,7 +15,7 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 }
 
 if (!defined('ZT_THEME_VERSION')) {
-    define('ZT_THEME_VERSION', '1.0.0');
+    define('ZT_THEME_VERSION', '1.0.1');
 }
 
 if (!defined('ZT_THEME_FILE')) {
