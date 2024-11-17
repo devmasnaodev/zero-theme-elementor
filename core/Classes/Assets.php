@@ -4,43 +4,69 @@ namespace ZT\Core\Classes;
 
 use ZT\Core\Traits\Singleton;
 
-class Assets
-{
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-    use Singleton;
+/**
+ * Class Assets
+ *
+ * Handles the registration and enqueueing of styles and scripts for the theme.
+ */
+class Assets {
 
-    protected function __construct()
-    {
-        $this->setup_hooks();
-    }
+	use Singleton;
 
-    protected function setup_hooks()
-    {
-        add_action('wp_enqueue_scripts', [$this, 'register_styles']);
-        add_action('wp_enqueue_scripts', [$this, 'dequeue_block_styles'],100);
-        add_action('elementor/frontend/after_enqueue_scripts',[$this, 'register_scripts'],10);
-        add_action('elementor/preview/enqueue_scripts',[$this, 'register_scripts'],10);
-    }
+	/**
+	 * Assets constructor.
+	 *
+	 * Initializes the class and sets up the necessary hooks.
+	 */
+	protected function __construct() {
+		$this->setup_hooks();
+	}
 
-    public function register_styles()
-    {
-        wp_enqueue_style('zero-theme-tailwind', get_template_directory_uri() . '/dist/css/tailwind.css', false, ZT_THEME_VERSION);
-        wp_enqueue_style('zero-theme', get_template_directory_uri() . '/dist/css/theme.css', false, ZT_THEME_VERSION); }
+	/**
+	 * Sets up WordPress hooks for enqueueing and dequeueing styles and scripts.
+	 */
+	protected function setup_hooks() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_block_styles' ), 100 );
+		add_action( 'elementor/frontend/after_enqueue_scripts', array( $this, 'register_scripts' ), 10 );
+		add_action( 'elementor/preview/enqueue_scripts', array( $this, 'register_scripts' ), 10 );
+	}
 
-    public function register_scripts(){
+	/**
+	 * Registers and enqueues theme styles.
+	 *
+	 * @return void
+	 */
+	public function register_styles() {
+		wp_enqueue_style( 'zero-theme-tailwind', get_template_directory_uri() . '/dist/css/tailwind.css', false, ZT_THEME_VERSION );
+		wp_enqueue_style( 'zero-theme', get_template_directory_uri() . '/dist/css/theme.css', false, ZT_THEME_VERSION );
+	}
 
-        wp_register_script( 'zero-theme-components', get_template_directory_uri() . '/dist/js/components.js', ['elementor-frontend'], ZT_THEME_VERSION,  true );
-        wp_register_script( 'zero-theme-main', get_template_directory_uri() . '/dist/js/main.js', ['jquery'], ZT_THEME_VERSION,  true);
+	/**
+	 * Registers and enqueues theme scripts.
+	 *
+	 * @return void
+	 */
+	public function register_scripts() {
+		wp_register_script( 'zero-theme-components', get_template_directory_uri() . '/dist/js/components.js', array( 'elementor-frontend' ), ZT_THEME_VERSION, true );
+		wp_register_script( 'zero-theme-main', get_template_directory_uri() . '/dist/js/main.js', array( 'jquery' ), ZT_THEME_VERSION, true );
 
-        wp_enqueue_script( 'zero-theme-components' );
-        wp_enqueue_script( 'zero-theme-main' );
-    }
+		wp_enqueue_script( 'zero-theme-components' );
+		wp_enqueue_script( 'zero-theme-main' );
+	}
 
-    public function dequeue_block_styles()
-    {
-        wp_dequeue_style('wp-block-library');
-        wp_dequeue_style('wp-block-library-theme');
-        wp_dequeue_style('wp-block-style');
-    }
-
+	/**
+	 * Dequeues default WordPress block styles.
+	 *
+	 * @return void
+	 */
+	public function dequeue_block_styles() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+		wp_dequeue_style( 'wp-block-style' );
+	}
 }

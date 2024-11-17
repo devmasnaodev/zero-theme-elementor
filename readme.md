@@ -1,13 +1,13 @@
 # Zero Theme - Elementor
 
-Um tema simples e leve para o construtor de páginas Elementor baseado em Tailwindcss ou SASS, feito para desenvolvedores.
+A simple and lightweight classical theme for the Elementor page builder, based on TailwindCSS or SASS, designed for developers.
 
-## Recursos para desenvolvedor
+## Developer Features
 
- - Suporte para ACF Local JSON
- - Elementor Extensions
- - Interface Mínima
- - Gulp Pipeline
+- Support for ACF Local JSON
+- Elementor Extensions
+- Minimal Interface
+- Gulp Pipeline
 
 ## Requisitos mínimos
 
@@ -20,52 +20,54 @@ Um tema simples e leve para o construtor de páginas Elementor baseado em Tailwi
 
 ## Setup Inicial
 
-<p>Clone o repositório na dentro da pasta de temas do WordPress wp-content/themes </p>
+Clone the repository into the WordPress theme folder at `wp-content/themes`:
 
-```
+``` shell
 $ cd PATH/TO/WORDPRESS/wp-content/themes
 
 $ git clone https://github.com/rodrigo-gpereira/zero-theme.git zero-theme
 ```
 
-<p> Para Linux/Mac ou WSL2 Recomendo utilizar [ASDF](https://asdf-vm.com/) para gerenciar multiplas instalações de node </p>
+For Linux/Mac or WSL2, it is recommended to use [ASDF](https://asdf-vm.com/) to manage multiple Node.js installations.
 
-<p> Instale as dependências </p>
+For Windows to manage multiple node installations via NVM, watch on my [YouTube channel how to configure your Windows terminal like a pro](https://www.youtube.com/watch?v=dMVOPfWQW3g)
 
-```
+## Install dependencies:
+
+``` shell
 $ composer install
 
 $ npm install
-```
-<p> Ajustes os arquivo .env para suas variáveis de ambiente </p>
+``` 
+Configure the `.env` file with your environment variables:
 
-```
+``` shell
 #Local SSL certificate files
 SSL_KEY_FILE=/PATH/TO/YOUR/CERTKEY/localhost-key.pem
 SSL_CERT_FILE=/PATH/TO/YOUR/CERTFILE/localhost.pem
 
 # Domain of the development environment
-DOMAIN=https://zero-theme.local
+DOMAIN=https://wordpress-zero-theme.local
 
 #Package Info
 TEXT_DOMAIN=zero-theme
 PACKAGE=zero_theme
 ```
 
-<p> Iniciar o ambiente </p>
+Start the development environment:
 
-```
+``` shell
 $ npm start
 ```
 
-<p> Atualizar o arquivo de traduções .pot </p>
+Update the `.pot` translation file:
 
-```
+``` shell
 $ gulp pot
 ```
 
-<p> Gerar a build do Tema </p>
+Generate the theme build:
 
-```
+``` shell
 $ npm run build
 ```

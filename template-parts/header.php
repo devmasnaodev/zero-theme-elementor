@@ -2,7 +2,7 @@
 /**
  * The template for displaying header.
  *
- * @package HelloElementor
+ * @package Zero_Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,6 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <a class="skip-link screen-reader-text" href="#content">
-	<?php _e( 'Skip to content', 'zero-theme' ); ?>
+	<?php esc_html_e( 'Skip to content', 'zero-theme' ); ?>
 </a>
 
