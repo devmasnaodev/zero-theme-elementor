@@ -24,6 +24,7 @@ class Assets {
 	 */
 	protected function __construct() {
 		$this->setup_hooks();
+		$this->remove_hooks();
 	}
 
 	/**
@@ -34,6 +35,16 @@ class Assets {
 		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_block_styles' ), 100 );
 		add_action( 'elementor/frontend/after_enqueue_scripts', array( $this, 'register_scripts' ), 10 );
 		add_action( 'elementor/preview/enqueue_scripts', array( $this, 'register_scripts' ), 10 );
+	}
+
+	/**
+	 * Removes the default WordPress global styles.
+	 *
+	 * @return void
+	 */
+	public function remove_hooks(){
+		remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+		remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 	}
 
 	/**
