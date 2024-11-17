@@ -31,6 +31,10 @@ if ( ! defined( 'ZT_THEME_URI' ) ) {
 	define( 'ZT_THEME_URL', untrailingslashit( get_template_directory_uri() ) );
 }
 
+if ( ! defined( 'ZT_ELEMENTOR_HIDE_HEADER_AND_FOOTER_ON_EDITOR' ) ) {
+	define( 'ZT_ELEMENTOR_HIDE_HEADER_AND_FOOTER_ON_EDITOR', false );
+}
+
 if ( ! class_exists( 'Theme', false ) ) {
 
 	/**
