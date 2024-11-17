@@ -1,4 +1,5 @@
 {
+	"plugins": ["prettier-plugin-tailwindcss"],
 	"printWidth": 80,
 	"tabWidth": 4,
 	"useTabs": true,
@@ -7,4 +8,4 @@
 	"bracketSpacing": true,
 	"semi": true,
 	"arrowParens": "always"
-  }
+}
