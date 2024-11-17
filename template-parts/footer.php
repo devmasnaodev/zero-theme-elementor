@@ -2,10 +2,9 @@
 /**
  * The template for displaying footer.
  *
- * @package HelloElementor
+ * @package Zero_Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
