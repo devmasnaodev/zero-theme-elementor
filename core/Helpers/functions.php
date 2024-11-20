@@ -25,6 +25,7 @@ if ( ! function_exists( 'verify_elementor_template_type' ) ) {
 	 *
 	 * @author Rodrigo Gomes <rodrigo.dev.ux@outlook.com>
 	 * @param ElementorPro\Modules\ThemeBuilder\Classes\Locations_Manager $location_manager An instance of locations manager.
+
 	 */
 	function verify_elementor_template_type( $location_manager ) {
 
