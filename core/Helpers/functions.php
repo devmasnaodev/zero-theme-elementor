@@ -24,7 +24,8 @@ if ( ! function_exists( 'verify_elementor_template_type' ) ) {
 	 * Check if the template is a header or footer
 	 *
 	 * @author Rodrigo Gomes <rodrigo.dev.ux@outlook.com>
-	 * @param ElementorPro\Modules\ThemeBuilder\Classes\Locations_Manager $location_manager An instance of locations manager
+	 * @param ElementorPro\Modules\ThemeBuilder\Classes\Locations_Manager $location_manager An instance of locations manager.
+
 	 */
 	function verify_elementor_template_type( $location_manager ) {
 
@@ -59,7 +60,7 @@ if ( ! function_exists( 'hide_header_footer_on_elementor_special_templates' ) ) 
 
 		$template_type = get_post_meta( get_the_ID(), '_elementor_template_type', true );
 
-		if ( $template_type === 'container' || $template_type === 'section' ) {
+		if ( 'container' === $template_type || 'section' === $template_type ) {
 			add_action( 'elementor/theme/before_do_header', 'verify_elementor_template_type' );
 			add_action( 'elementor/theme/before_do_footer', 'verify_elementor_template_type' );
 		}
